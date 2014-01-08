@@ -2,8 +2,8 @@
 // [doping-js] doping-server.js
 (function(win, parent) {
 
-  var Doping = win.Doping;
-  var emitter = Doping.emitter = new Emitter();
+  var Doping = win.Doping, Doping.get = get;
+  var emitter = Doping.emitter = new Emitter(); // global emitter
   var Event = Doping.Event, Key = Doping.Key;
 
   var DopeProtos = {
@@ -11,6 +11,8 @@
     toBody: toBody,
     evalJs: evalJs
   };
+
+  Doping.prototype = new Emitter();
   for( var i in DopeProtos)
     Doping.prototype[i] = DopeProtos[i];
 
@@ -24,15 +26,14 @@
     _newPort(new Doping(), port)
   }
 
-  var portlist = [];
-
-  function _newPort(doper, port) {
-    doper.port = port;
-    emitter.emit(Event.Start, doper, portlist.push(port) - 1)
+  var motherlist = [];
+  function _newPort(mother, port) {
+    mother.port = port;
+    emitter.emit(Event.Start, mother, motherlist.push(mother) - 1)
   }
 
   function get(i) {
-    return portlist[i];
+    return motherlist[i];
   }
 
   function toHead(src) {
