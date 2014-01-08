@@ -7,14 +7,14 @@
 
   var EventAction = {
     'doping.tohead': toHead,
-    'doping.toBody': toBody,
+    'doping.tobody': toBody,
     'doping.evaljs': evalJs
   };
 
   var chan, port;
   if(win === parent)
     throw new Error('Cannot execute this module.');
-  chan = new MessageChannel, port = chan.port1;
+  chan = new MessageChannel, port = Doping.port = chan.port1;
 
   port.onmessage = onMessage;
   parent.postMessage(Event.Start, [chan.port2], '*');

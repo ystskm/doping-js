@@ -7,7 +7,6 @@
   var Event = Doping.Event, Key = Doping.Key;
 
   var DopeProtos = {
-    newPort: newPort,
     toHead: toHead,
     toBody: toBody,
     evalJs: evalJs
@@ -54,7 +53,7 @@
 
   function evalJs(src) {
     var m = {};
-    m[Key.Type] = 'doping.tobody';
+    m[Key.Type] = 'doping.evaljs';
 
     var d = m[Key.Data] = src;
     this.port.postMessage(m);
