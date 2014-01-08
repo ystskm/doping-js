@@ -2,7 +2,9 @@
 // [doping-js] doping-server.js
 (function(win, parent) {
 
-  var Doping = win.Doping, Doping.get = get;
+  var Doping = win.Doping;
+  Doping.get = get;
+
   var emitter = Doping.emitter = new Emitter(); // global emitter
   var Event = Doping.Event, Key = Doping.Key;
 
