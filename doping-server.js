@@ -23,7 +23,7 @@
 
   function onMessage() {
     var e = arguments[0], port = e.ports[0], data = e.data;
-    if(data != Event.Start)
+    if(data != Event.Start) // message for others
       return typeof _fn == 'function' && _fn.apply(this, arguments);
     _newPort(new Doping(), port)
   }
