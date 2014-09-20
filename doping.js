@@ -7,6 +7,7 @@
     if(!(this instanceof Doping))
       return doperlist[i];
     doperlist.push(this);
+    typeof Emitter != 'undefined' && Emitter.call(this);
   };
 
   Doping.Event = {
