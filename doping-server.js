@@ -5,8 +5,8 @@
   var Doping = win.Doping;
   Doping.get = get;
 
-  var Event = Doping.Event;
-  var Key = Doping.Key;
+  var emitter = Doping.emitter = new Emitter(); // global emitter
+  var Event = Doping.Event, Key = Doping.Key;
 
   var DopeProtos = {
     toHead: toHead,
@@ -32,7 +32,7 @@
   var motherlist = [];
   function _newPort(mother, port) {
     mother.port = port;
-    mother.emit(Event.Start, mother, motherlist.push(mother) - 1)
+    emitter.emit(Event.Start, mother, motherlist.push(mother) - 1)
   }
 
   function get(i) {

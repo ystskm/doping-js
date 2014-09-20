@@ -6,8 +6,9 @@
   var Doping = win.Doping = function(i) {
     if(!(this instanceof Doping))
       return doperlist[i];
+    if(typeof Emitter != 'undefined')
+      Emitter.call(this);
     doperlist.push(this);
-    typeof Emitter != 'undefined' && Emitter.call(this);
   };
 
   Doping.Event = {

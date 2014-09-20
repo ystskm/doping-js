@@ -21,7 +21,7 @@ Dependencies: [browser-emitter-js](https://github.com/ystskm/browser-emitter-js)
 	<script type="text/javascript" src="doping-server.js"></script>
 	<script type="text/javascript">
 	
-	    window.Doping.on('doping.port', function(mother) {
+	    window.Doping.emitter.on('doping.port', function(mother) {
 	      mother.evalJs("alert('Present for you.')");
 	    });
 	
