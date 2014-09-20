@@ -1,27 +1,27 @@
 {
-  "name": "micro-pipe",
+  "name": "Doping",
   "version": "1.0.0",
   "author": {
     "name": "Yoshitaka Sakamoto",
-    "url": "http://github.com/ystskm",
+    "url": "http://github.com/ystskm/doping-js",
     "email": "sakamoto@liberty-technology.biz"
   },
   "contributors": [],
-  "description": "A small utility for async pipe",
+  "description": "A small utility for doping",
   "dependencies": {},
   "devDependencies": {
     "nodeunit": "*",
     "nodeunit-ci": "*"
   },
-  "keywords": ["util","async","pipe","chain","function"],
+  "keywords": ["util","iframe"],
   "main": "micro-pipe.js",
   "repository": {
-    "url": "http://github.com/ystskm/node-localelist",
+    "url": "http://github.com/ystskm/doping-js",
     "type": "git"
   },
   "licenses": [{
       "type": "MIT",
-      "url": "https://github.com/ystskm/node-localelist/blob/master/LICENSE"
+      "url": "https://github.com/ystskm/doping-js/blob/master/LICENSE"
   }],
   "scripts": {
     "test": "node test/_runner.js"

@@ -15,7 +15,7 @@
   };
 
   for( var i in Emitter)
-    Doping.prototype[i] = Emitter[i];
+    Doping.prototype[i] = Emitter.prototype[i];
   for( var i in DopeProtos)
     Doping.prototype[i] = DopeProtos[i];
 
