@@ -33,7 +33,12 @@
   }
 
   function evalJs(d) {
-    eval(d[Key.Data]);
+    try {
+      eval(d[Key.Data]);
+    } catch(e) {
+      console.error(d);
+      throw e
+    }
   }
 
   function _dope(d, target) {
