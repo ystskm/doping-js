@@ -23,24 +23,19 @@
   win.onmessage = onMessage;
 
   function onMessage() {
-
     var e = arguments[0], port = e.ports[0], data = e.data;
     if(data == Event.Start)
       return _newPort(new Doping(), port);
 
-    // message for each mother
-    motherlist.forEach(function(mother) {
-      mother.port === port && mother.emit('incoming', data, port)
-    });
-
     // message for others
     typeof _fn == 'function' && _fn.apply(this, arguments);
-
   }
 
   var motherlist = [];
   function _newPort(mother, port) {
-    mother.port = port;
+    mother.port = port, port.onmessage = function(e) {
+      mother.emit('incoming', e.data, e);
+    };
     emitter.emit(Event.Start, mother, motherlist.push(mother) - 1)
   }
 
