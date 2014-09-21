@@ -23,10 +23,17 @@
   win.onmessage = onMessage;
 
   function onMessage() {
+
     var e = arguments[0], port = e.ports[0], data = e.data;
     if(data != Event.Start) // message for others
       return typeof _fn == 'function' && _fn.apply(this, arguments);
-    _newPort(new Doping(), port)
+    if(data == Event.Start)
+      return _newPort(new Doping(), port);
+
+    motherlist.forEach(function(mother) {
+      mother.emit('incoming', data, port)
+    });
+
   }
 
   var motherlist = [];
@@ -36,7 +43,7 @@
   }
 
   function get(i) {
-    return motherlist[i];
+    return i == null ? motherlist: motherlist[i];
   }
 
   function toHead(src) {
