@@ -14,10 +14,12 @@
   var chan, port;
   if(win === parent)
     throw new Error('Cannot execute this module.');
-  chan = new MessageChannel, port = Doping.port = chan.port1;
+  
+  chan = new MessageChannel;
+  port = Doping.port = chan.port1;
 
   port.onmessage = onMessage;
-  parent.postMessage(Event.Start, [chan.port2], '*');
+  parent.postMessage(Event.Start, '*', [chan.port2]);
 
   function onMessage(e) {
     var d = e.data || '', fn = EventAction[d[Key.Type]];
