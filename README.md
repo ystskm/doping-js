@@ -16,7 +16,7 @@ Dependencies: [browser-emitter-js](https://github.com/ystskm/browser-emitter-js)
 Test execution can check with parcel:
 
 ```sh
-npm run test:serve
+npm i && npm run test:serve
 ```
 
 And access to the url e.g. `http://localhost:1234/`
