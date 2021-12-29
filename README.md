@@ -21,7 +21,7 @@ npm i --save-dev && npm run test:serve
 
 And access to the url e.g. `http://localhost:1234/`
 
-`parent.html`
+`test/parent.html`
 ```html
 <script type="text/javascript"> console.log('# We are parent!'); </script>
 <script type="text/javascript" src="../libs/Emitter-0.7.2.js"></script>
@@ -46,7 +46,7 @@ And access to the url e.g. `http://localhost:1234/`
 <iframe style="border:1px solid #aaa;"/>
 ```
 
-`children.html`
+`test/child0.html`
 ```html
 <script type="text/javascript"> console.log('# We are child!'); </script>
 <script type="text/javascript" src="../doping.js"></script>
