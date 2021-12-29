@@ -79,7 +79,7 @@ And access to the url e.g. `http://localhost:1234/`
 
 **parent**
 
-`Doping.emitter.on("doping.port", mother=> ...)
+`Doping.emitter.on("doping.port", mother=> ...)`
    ... Detect access request from doping-client and established the connection
 
 `Doping.get(<Number>i)`
