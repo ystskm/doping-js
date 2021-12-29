@@ -6,6 +6,8 @@
 
   const NULL = null, TRUE = true, FALSE = false, UNDEF = undefined;
   const Doping = g.Doping;
+  const DopingEmitter = Doping.emitter = new Emitter(); // global emitter
+
   const Event = Doping.Event, Key = Doping.Key;
   const EventAction = {
     'doping.tohead': toHead,
@@ -34,6 +36,7 @@
         return;
       }
       typeof act == 'function' && act(d);
+      DopingEmitter.emit(Event.Incoming, e.data, e); // any message can receive via Doping.emitter
     };
     parent.postMessage(Event.Start, '*', [chan.port2]);
   });

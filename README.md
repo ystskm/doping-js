@@ -93,12 +93,18 @@ And access to the url e.g. `http://localhost:1234/`
    
 `mother.evalJs`
    ... Eval a script on child
-   
+
+`mother.on("incoming", msg=> ...)`
+   ... Receive messages from child except <String>ping/pong
+
 `mother.port.postMessage(<String>msg)`
    ... Sending a message to child
    
 
 **child**
+
+`Doping.emitter.on("incoming", msg=> ...)`
+   ... Receive messages from mother except ping/pong
 
 `Dopiong.port.postMessage(<String>msg)`
    ... Sending a message to parent
