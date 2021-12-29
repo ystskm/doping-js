@@ -53,7 +53,7 @@ And access to the url e.g. `http://localhost:1234/`
 <script type="text/javascript" src="../doping-client.js"></script>
 <div> THIS IS CHILD FRAME </div>
 <script>
-(g=>{
+(()=>{
   
   // Doping.ready.then(()=> ... ) で iframe の [c] ping => [p] ping => [c] resolve を待機する
   Doping.ready.then(()=>{
