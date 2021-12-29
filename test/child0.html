@@ -1,0 +1,17 @@
+<script type="text/javascript"> console.log('# We are child!'); </script>
+<script type="text/javascript" src="../doping.js"></script>
+<script type="text/javascript" src="../doping-client.js"></script>
+<div> THIS IS CHILD FRAME </div>
+<script>
+(g=>{
+  
+  // Doping.ready.then(()=> ... ) で iframe の [c] ping => [p] ping => [c] resolve を待機する
+  Doping.ready.then(()=>{
+    console.log('[c] LETs TEST:');
+    Doping.port.postMessage('c => p message 1');
+    Doping.port.postMessage('c => p message 2');
+    Doping.port.postMessage('c => p message 3');  
+  });
+  
+})();
+</script>

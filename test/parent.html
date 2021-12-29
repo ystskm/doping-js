@@ -1,0 +1,21 @@
+<script type="text/javascript"> console.log('# We are parent!'); </script>
+<script type="text/javascript" src="../libs/Emitter-0.7.2.js"></script>
+<script type="text/javascript" src="../doping.js"></script>
+<script type="text/javascript" src="../doping-server.js"></script>
+<script type="text/javascript">
+(()=>{
+  
+  // Doping.emitter.on('doping.port', ... ) で iframe からの接続要求を待機する。
+  Doping.emitter.on('doping.port', mother=>{
+    console.log('Event: doping.port comes.');
+    console.log('[p] LETs TEST:');
+    mother.evalJs('console.log("[p => c] Hello, children")');
+    mother.on('incoming', msg=>{
+      console.log('mother detects incoming message:', msg);
+    });
+  });
+
+})();
+</script>
+<div> THIS IS PARENT FRAME </div>
+<iframe style="border:1px solid #aaa;"/>

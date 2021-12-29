@@ -1,9 +1,12 @@
-/***/
-// [doping-js] doping.js
-(function(win) {
+/**
+ * [doping-js] doping.js
+ * 基本名前空間 Class:Doping を作成する。server / client 共通
+ * このクラスは server で Event.Start = "doping.port" イベントを受け取ると、create instance される。
+ */
+(g=>{ // g === window
 
-  var doperlist = [];
-  var Doping = win.Doping = function(i) {
+  const doperlist = [ ];
+  const Doping = g.Doping = function(i) {
     if(!(this instanceof Doping))
       return doperlist[i];
     if(typeof Emitter != 'undefined')
@@ -12,7 +15,8 @@
   };
 
   Doping.Event = {
-    Start: 'doping.port'
+    Start: 'doping.port',
+    Incoming: 'incoming'
   };
 
   Doping.Key = {
@@ -20,4 +24,4 @@
     Data: 'data'
   };
 
-})(window);
+})(this);
