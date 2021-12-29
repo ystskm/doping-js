@@ -2,6 +2,7 @@
  * [doping-js](test) basic.js
  * 基本動作テスト
  * JSDOM が MessageChannel をサポートしたら自動化できる。
+ * see: https://github.com/jsdom/jsdom/issues/2448
  */
 const NULL = null, TRUE = true, FALSE = false, UNDEF = undefined;
 const nodeunit = require('foonyah-ci');
